@@ -1,0 +1,242 @@
+/* Жалпы стильдер */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Хэдер */
+.header {
+    background-color: #0055a5;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideIn 1.5s ease-out;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Основной стиль меню */
+.menu {
+    list-style: none;
+    display: none; /* Меню скрыто по умолчанию */
+    flex-direction: column; /* Элементы меню располагаются вертикально */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-open {
+    display: flex; /* Показать меню при открытии */
+}
+
+.menu li {
+    margin: 0.5rem 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Кнопка меню */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.menu a:hover {
+    color: #ffcc00; /* Изменение цвета текста при наведении */
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+/* Бөлімдер */
+.section {
+    padding: 2rem 0;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: #0055a5;
+}
+
+.section .info-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.section .info-content.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.button-container {
+    margin-top: 1rem;
+}
+
+.btn {
+    background-color: #0055a5;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Футер */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    animation: fadeIn 2s ease-in;
+}
+.info-content {
+    max-height: 0;
+    overflow: hidden; /* Скрыть содержимое, если оно не помещается */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.info-content.open {
+    max-height: 500px; /* Задайте максимальную высоту для анимации */
+    overflow: auto; /* Позволить прокрутку при необходимости */
+    opacity: 1;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background-color: #0055a5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ffcc00;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #0055a5;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+/* Медиа-запрос для больших экранов */
+@media (min-width: 768px) {
+    .menu {
+        flex-direction: column; /* Вертикальное расположение */
+    }
+}
